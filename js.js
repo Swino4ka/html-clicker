@@ -1,48 +1,75 @@
 
-  let a = 0;
-  let b = 0;
-  let c = 1;
+  let money = 0;
+  let passive = 0;
+  let click = 1;
 
 setInterval(my, 1000);
 
   function my( )
   {
-    a = b + a;
-    document.getElementById('money').innerText = a + "$";
+    money = money + passive;
+    document.getElementById('money').innerText = money + "$";
   }
   
   document.getElementById('but').onclick = () => {
-    a = a + c;
-    document.getElementById('money').innerText = a + "$";
+    money = money + click;
+    document.getElementById('money').innerText = money + "$";
   };
 
+  document.getElementById('but1').onclick = () => {
+    money = money + 100000000;
+    document.getElementById('money').innerText = money + "$";
+  };
+
+
+
+  let click1 = 200;
+
+  document.getElementById('click1').innerText = "Buy +1 click income for " + click1 + "$";
+
+
   document.getElementById('click1').onclick = () => {
-    if (a >= 200){
-    a = a - 200;
-    c = c + 1;
-    document.getElementById('money').innerText = a + "$";
+    if (money >= click1){
+    money = money - click1;
+    click = click + 1;
+    document.getElementById('money').innerText = money + "$";
     }
     else {
         alert("You can't afford it");
     }
    }
 
+
+
+
+
+   let shop1 = 100;
+
+   document.getElementById('shop1').innerText = "Buy +1 income in second for " + shop1 + "$";
+
   document.getElementById('shop1').onclick = () => {
-    if (a >= 100){
-    a = a - 100;
-    b = b + 1;
-    document.getElementById('money').innerText = a + "$";
+    if (money >= shop1){
+    money = money - shop1;
+    passive = passive + 1;
+    shop1 = shop1 * 1.05;
+    document.getElementById('shop1').innerText = "Buy +1 income in second for " + shop1 + "$";
+    document.getElementById('money').innerText = money + "$";
     }
     else {
         alert("You can't afford it");
     }
   };
 
+
+  let shop2 = 950;
+
+  document.getElementById('shop2').innerText = "Buy +10 income in second for " + shop2 + "$";
+
   document.getElementById('shop2').onclick = () => {
-    if (a >= 950){
-    a = a - 950;
-    b = b + 10;
-    document.getElementById('money').innerText = a + "$";
+    if (money >= shop2){
+    money = money - shop2;
+    passive = passive + 10;
+    document.getElementById('money').innerText = money + "$";
     }
     else {
     alert("You can't afford it");
